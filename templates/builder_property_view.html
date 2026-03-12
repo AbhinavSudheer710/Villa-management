@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'builder_dashboard_header.html' %}
+<br><br><br><br><br><br><br>
+<div class="container">
+ <div class="row">
+        {% for i in response %}
+    <div class="col-lg-4 col-md-6">
+        <div class="card" style="width: 18rem;">
+  <img src="../media/{{i.property_photo}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.property_location}}</h5>
+    <p class="card-text  text-dark "><b>property category:</b> {{i.property_category}}</p>
+    <p class="card-text text-dark"><b>Budget:</b> {{i.property_budget}}</p>
+    <p class="card-text text-dark"><b>Bedrooms:</b> {{i.bedrooms}}</p>
+    <p class="card-text text-dark"><b>Bathrooms:</b> {{i.bathrooms}}</p>
+    <p class="card-text text-dark"><b>Area:</b> {{i.area}}</p>
+    <p class="card-text text-dark"><b>Floor:</b> {{i.floor}}</p>
+    <p class="card-text text-dark"><b>Parking:</b> {{i.parking}}</p>
+    <div class="d-flex" style="justify-content: space-between;">
+      <button class="btn btn-primary w-30 py-2 fs-4 mb-4 rounded-2"><a  href="{% url 'builder_property_edit' id=i.id %}" style="color: rgb(255, 255, 255); text-decoration: none;">EDIT</a></button>
+      <button  class="btn btn-danger w-30 py-2 fs-4 mb-4 rounded-2"><a href="{% url 'builder_property_delete' id=i.id %}" style="color: rgb(255, 255, 255); text-decoration: none;" >DELETE</a></button>
+    </div>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
+</div>
+        
+        {% endfor %}
+    </div>
+    </div>
+{% include 'builder_dashboard_footer.html' %}

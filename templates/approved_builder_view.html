@@ -1,0 +1,30 @@
+{% load static %}
+{% include 'admin_dashboard_header.html' %}
+
+<div class="container">
+  <br><br><br><br><br><br><br>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in response %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.phone}}</td>
+      <td><a href="{% url 'builder_delete' id=i.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% include 'admin_dashboard_footer.html' %}

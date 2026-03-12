@@ -1,0 +1,47 @@
+{% load static %}
+{% include 'admin_dashboard_header.html' %}
+<br><br><br><br><br><br><br>
+<div class="container">
+ <div class="row">
+        {% for i in response %}
+    <div class="col-lg-4 col-md-6">
+        <div class="card" style="width: 18rem;">
+  <img src="../media/{{i.property_photo}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.property_location}}</h5>
+    <p class="card-text  text-dark "><b>property category:</b> {{i.property_category}}</p>
+    <p class="card-text text-dark"><b>Budget:</b> {{i.property_budget}}</p>
+    <p class="card-text text-dark"><b>Bedrooms:</b> {{i.bedrooms}}</p>
+    <p class="card-text text-dark"><b>Bathrooms:</b> {{i.bathrooms}}</p>
+    <p class="card-text text-dark"><b>Area:</b> {{i.area}}</p>
+    <p class="card-text text-dark"><b>Floor:</b> {{i.floor}}</p>
+    <p class="card-text text-dark"><b>Parking:</b> {{i.parking}}</p>
+
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
+</div>
+        
+        {% endfor %}
+    </div>
+    </div>
+{% include 'admin_dashboard_footer.html' %}
+
+<!-- <div class="col-lg-4 col-md-6">
+          <div class="item">
+            <a href="#"><img src="../media/{{i.property_photo}}" alt=""></a>
+            <span class="category">{{i.property_category}}</span>
+            <h6>{{i.property_budget}}</h6>
+            <h4><a href="#">{{i.property_location}}</a></h4>
+            <ul>
+              <li>Bedrooms: <span>{{i.bedrooms}}</span></li>
+              <li>Bathrooms: <span>{{i.bathrooms}}</span></li>
+              <li>Area: <span>{{i.area}}</span></li>
+              <li>Floor: <span>{{i.floor}}</span></li>
+              <li>Parking: <span>{{i.parking}}</span></li>
+            </ul>
+             <div class="main_button">
+              <a style="color: orangered;" href="#">Login To Schedule a visit</a>
+            </div> -->
+          <!-- </div>
+        </div> --> -->

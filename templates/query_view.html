@@ -1,0 +1,29 @@
+{% load static %}
+{% include 'admin_dashboard_header.html' %}
+
+<div class="container" style="margin-top:160px">
+    <table class="table">
+  <thead>
+    <tr>
+      <th class="text-dark" scope="col">id</th>
+      <th class="text-dark" scope="col">Full Name</th>
+      <th class="text-dark" scope="col">Email Address</th>
+      <th class="text-dark" scope="col">Subject</th>
+      <th class="text-dark" scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in response %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.subject}}</td>
+      <td>{{i.message}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% include 'admin_dashboard_footer.html' %}

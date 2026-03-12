@@ -1,0 +1,101 @@
+{% load static %}
+{% include 'admin_dashboard_header.html' %}
+<!-- <div class="container">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Approve</th>
+      <th scope="col">Reject</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in response %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.phone}}</td>
+      <td><a href="{% url 'builder_approve' id=i.id %}"><button type="button" class="btn btn-success">Approve</button></a></td>
+      <td><a href="{% url 'builder_reject' id=i.id %}"><button type="button" class="btn btn-danger">Reject</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div> -->
+
+<div class="container">
+  <br><br><br><br><br><br><br>
+  <div class="row">
+    <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-md-flex align-items-center">
+                    <div>
+                      <h4 class="card-title">Builder View</h4>
+                      <!-- <p class="card-subtitle">
+                        Ample Admin Vs Pixel Admin
+                      </p> -->
+                    </div>
+                    <!-- <div class="ms-auto mt-3 mt-md-0">
+                      <select class="form-select theme-select border-0" aria-label="Default select example">
+                        <option value="1">March 2025</option>
+                        <option value="2">March 2025</option>
+                        <option value="3">March 2025</option>
+                      </select>
+                    </div> -->
+                  </div>
+                  <div class="table-responsive mt-4">
+                    <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="px-0 text-muted">
+                            ID
+                          </th>
+                          <th scope="col" class="px-0 text-muted">Name</th>
+                          <th scope="col" class="px-0 text-muted">
+                            Email
+                          </th>
+                          <th scope="col" class="px-0 text-muted text-end">
+                            Phone
+                          </th>
+                          <th scope="col" class="px-0 text-muted text-end">
+                            Approve
+                          </th>
+                          <th scope="col" class="px-0 text-muted text-end">
+                            Reject
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for i in response %}
+                        <tr>
+                          <td class="px-0">
+                            {{i.id}}
+                          </td>
+                          <td class="px-0">{{i.name}}</td>
+                          <td class="px-0">
+                            {{i.email}}
+                          </td>
+                          <td class="px-0 text-dark fw-medium text-end">
+                            {{i.phone}}
+                          </td>
+                          
+                          <td class="px-0 text-dark fw-medium text-end"><a href="{% url 'builder_approve' id=i.id %}"><button type="button" class="btn btn-success">Approve</button></a></td>
+                          <td class="px-0 text-dark fw-medium text-end"><a href="{% url 'builder_reject' id=i.id %}"><button type="button" class="btn btn-danger">Reject</button></a></td>
+                        </tr>
+                        {% endfor %}
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+  </div>
+</div>
+
+{% include 'admin_dashboard_footer.html' %}

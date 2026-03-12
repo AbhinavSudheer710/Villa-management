@@ -1,0 +1,28 @@
+"""
+URL configuration for villa project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path,include
+from . import views
+urlpatterns = [
+    path('admin_dashboard',views.admin_dashboard),
+    path('query_view',views.query_display),
+    path('builder_view',views.builder_view),
+    path('builder_approve/<int:id>',views.builder_approved,name='builder_approve'),
+    path('builder_reject/<int:id>',views.builder_reject,name='builder_reject'),
+    path('view_schedule_visit',views.view_schedule_visit),
+    path('user_view',views.user_view),
+]

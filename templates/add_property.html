@@ -1,0 +1,93 @@
+{% load static %}
+{% include 'builder_dashboard_header.html'  %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
+  <link rel="shortcut icon" type="image/png" href="{% static "dashboard_assets/images/logos/favicon.png" %} " />
+  <link rel="stylesheet" href="../static/dashboard_assets/css/styles.min.css" />
+</head>
+
+<body>
+    
+  <!--  Body Wrapper -->
+  <div style="margin-top: 150px;" class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div
+      class="position-relative overflow-hidden text-bg-light min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="d-flex align-items-center justify-content-center w-100">
+        <div class="row justify-content-center w-100">
+          <div class="col-md-8 col-lg-8 col-xxl-6">
+            <div class="card mb-0">
+              <div class="card-body">
+                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                  <img src="./assets/images/logos/logo.svg" alt="">
+                </a>
+                <p class="text-center">Add Property</p>
+                <form action="add_property" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  <div class="mb-3">
+                    <label  class="form-label">Property Photo</label>
+                    <input type="file" class="form-control" name="property_photo">
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Property Category</label>
+                    <input type="text" class="form-control" name="property_category"  >
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Property Name</label>
+                    <input type="text" class="form-control" name="property_name" >
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Property Location</label>
+                    <input type="text" class="form-control" name="property_location" >
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Property Budget</label>
+                    <input type="text" class="form-control" name="property_budget" >
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Bedrooms</label>
+                    <input type="text" class="form-control" name="property_bedrooms">
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Bathrooms</label>
+                    <input type="text" class="form-control" name="property_bathrooms">
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Area</label>
+                    <input type="text" class="form-control" name="area">
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Floor</label>
+                    <input type="text" class="form-control" name="floor">
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Parking</label>
+                    <input type="text" class="form-control" name="parking">
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">ADD </button>
+                  <!-- <div class="d-flex align-items-center justify-content-center">
+                    <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
+                    <a class="text-primary fw-bold ms-2" href="./authentication-login.html">Sign In</a>
+                  </div> -->
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- solar icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
+{% include 'builder_dashboard_footer.html'  %}
